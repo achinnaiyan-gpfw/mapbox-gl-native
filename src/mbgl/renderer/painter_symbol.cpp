@@ -120,10 +120,7 @@ void Painter::renderSymbol(PaintParameters& parameters,
     const auto& layout = bucket.layout;
 
     context.depthMask = false;
-
-    // TODO remove the `true ||` when #1673 is implemented
-    const bool drawAcrossEdges = (frame.mapMode == MapMode::Continuous) && (true || !(layout.textAllowOverlap || layout.iconAllowOverlap ||
-          layout.textIgnorePlacement || layout.iconIgnorePlacement));
+    const bool drawAcrossEdges = !(layout.textAllowOverlap || layout.iconAllowOverlap || layout.textIgnorePlacement || layout.iconIgnorePlacement);
 
     // Disable the stencil test so that labels aren't clipped to tile boundaries.
     //

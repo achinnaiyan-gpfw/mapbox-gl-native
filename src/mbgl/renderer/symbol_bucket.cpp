@@ -63,7 +63,7 @@ bool SymbolBucket::hasCollisionBoxData() const {
 }
 
 bool SymbolBucket::needsClipping() const {
-    return mode == MapMode::Still;
+    return true;
 }
 
 void SymbolBucket::drawGlyphs(SymbolSDFShader& shader,
